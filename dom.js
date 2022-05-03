@@ -46,55 +46,51 @@ var header = document.getElementById('main-header');
 //}
 
 // QUERYSELECTOR //
-//var header = document.querySelector('#main-header');
-//header.style.borderBottom = 'solid 4px #ccc';
+var header = document.querySelector('#main-header');
+header.style.borderBottom = 'solid 4px #ccc';
 
-//var input = document.querySelector('input');
-//input.value='Hello world'
+var input = document.querySelector('input');
+input.value='Hello world'
 
-//var submit = document.querySelector('input[type="submit"]');
-//submit.value="SEND"
+var submit = document.querySelector('input[type="submit"]');
+submit.value="SEND"
 
-//var item = document.querySelector('.list-group-item');
-//item.style.color = 'red';
+var seconditem = document.querySelector('.list-group-item:nth-child(2)');
+seconditem.style.background = 'green';
 
-//var lastitem = document.querySelector('.list-group-item:last-child');
-//lastitem.style.color = 'blue';
-
-//var seconditem = document.querySelector('.list-group-item:nth-child(2)');
-//seconditem.style.color = 'coral';
+var thirditem = document.querySelector('.list-group-item:nth-child(3)');
+thirditem.style.color = 'transparent';
 
 //QUERYSELECTORALL//
-//var titles = document.querySelectorAll('.title');
+var titles = document.querySelectorAll('.title');
 
-//console.log(titles);
-//titles[0].textContent = 'Hello';
+console.log(titles);
+titles[0].textContent = 'Hello';
 
-//var odd = document.querySelectorAll('li:nth-child(odd)');
-//var even = document.querySelectorAll('li:nth-child(even)');
+var odd = document.querySelectorAll('li:nth-child(odd)');
 
-//for(var i=0;i < odd.length;i++){
-//    odd[i].style.backgroundColor = '#f4f4f4';
-//    even[i].style.backgroundColor = '#ccc';
-//}
 
-var items = document.getElementsByClassName('li-element');
-console.log(items);
-console.log(items[0]);
-items[0].style.backgroundColor = 'green';
-
-for(var i=0; i<items.length;i++){
-    items[i].style.fontWeight = 'bold';
+for(var i=0;i < odd.length;i++){
+   odd[i].style.backgroundColor = 'green';
 }
+
+// var items = document.getElementsByClassName('li-element');
+// console.log(items);
+// console.log(items[0]);
+// items[0].style.backgroundColor = 'green';
+
+// for(var i=0; i<items.length;i++){
+//     items[i].style.fontWeight = 'bold';
+// }
 
 //GETELEMENTSBYTAGNAME//
-var li = document.getElementsByTagName('li');
-console.log(li);
-console.log(li[4]);
-li[4].textContent = 'Hello 2';
-li[4].style.fontWeight = 'bold';
-li[4].style.backgroundColor = 'green';
+// var li = document.getElementsByTagName('li');
+// console.log(li);
+// console.log(li[4]);
+// li[4].textContent = 'Hello 2';
+// li[4].style.fontWeight = 'bold';
+// li[4].style.backgroundColor = 'green';
 
-for(var i=0; i < li.length;i++){
-    li[i].style.backgroundColor = '#f4f4f4';
-}
+// for(var i=0; i < li.length;i++){
+//     li[i].style.backgroundColor = '#f4f4f4';
+// }
