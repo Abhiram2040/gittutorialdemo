@@ -30,3 +30,4 @@ console.log(items[1]);
 items[1].textcontent = 'Hello 2';
 items[1].style.fontWeight = 'bold';
 items[1].style.backgroundColor = 'green';
+
