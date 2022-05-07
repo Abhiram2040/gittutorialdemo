@@ -39,7 +39,7 @@
   </section>
   <ul id='listOfUsers'></ul>
 
-  <script type="text/javascript">
+  <script>
     function saveToLocalStorage(event) {
 
 
@@ -48,34 +48,60 @@
       const email = event.target.email.value;
       // localStorage.setItem('name', name);
       // localStorage.setItem('email', email);
+
+      let myObj = {
+        name,
+        email
+      };
+
+      localStorage.setItem(myObj.email, JSON.stringify(myObj))
+
+      let myObj_serialized = JSON.stringify(myObj);
+      console.log(myObj_serialized);
+
+      //localStorage.setItem("myObj", myObj_serialized);
+
+
+      let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+
+      //console.log(myObj_deserialized);
+
+      showNewUserOnScreen(myObj)
+
+    }
+
+    function showNewUserOnScreen(User) {
+      const parentNode = document.getElementById('listOfUsers');
+      const childHTML = `<li id=${User.email}> ${User.name} - ${User.email} <button onclick=deleteUser('${User.email}')> Delete User </button> <button onclick=editUserDetails('${User.email}','${User.name}')>Edit User </button></li>`
+
+      parentNode.innerHTML = parentNode.innerHTML + childHTML;
+    }
+
+
+    function editUserDetails(email, name) {
+
+      document.getElementById('email').value = email;
+      document.getElementById('name').value = name;
     
-    let myObj = {
-      name,
-      email
-    };
 
-    localStorage.setItem(myObj.email, JSON.stringify(myObj))
+      deleteUser(email)
+    }
 
-    let myObj_serialized = JSON.stringify(myObj);
-    console.log(myObj_serialized);
+    function deleteUser(email) {
+      console.log(email)
+      localStorage.removeItem(email);
+      removeUserFromScreen(email);
 
-    //localStorage.setItem("myObj", myObj_serialized);
+    }
+
+    function removeUserFromScreen(email) {
+      const parentNode = document.getElementById('listOfUsers');
+      const childNodeToBeDeleted = document.getElementById(email);
+
+      parentNode.removeChild(childNodeToBeDeleted)
+    }
 
 
-    let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
-
-    //console.log(myObj_deserialized);
-
-    showNewUserOnScreen(myObj)
-    
-  }
-
-  function showNewUserOnScreen(User){
-    const parentNode = document.getElementById('listOfUsers');
-    const childHTML = `<li> ${User.name} - ${User.email} </li>`
-
-    parentNode.innerHTML = parentNode.innerHTML + childHTML;
-  }
   </script>
 </body>
 
